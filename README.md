@@ -7,6 +7,7 @@ Applying statistics and hypothesis testing using R to analyze a series of datase
 Load, clean up, and reshape datasets using tidyverse and dplyr in R
 
 **Statistics test evaluated by R:**
+
 **Visualization by ggplot2**
 
 ### Results:
