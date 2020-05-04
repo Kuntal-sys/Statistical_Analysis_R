@@ -3,33 +3,30 @@ Part One: Multiple Linear Regression Written Analysis
 
 Summary:
 1.Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
-    
-    The vehicle.length, ground.clearance and intercept are the variables that are statistically unlikely to provide random amounts of variance to the linear model.
+
+Ans: The vehicle.length, ground.clearance and intercept are the variables that are statistically unlikely to provide random amounts of variance to the linear model.
     
     
 2.Is the slope of the linear model considered to be zero? Why or why not?
     
-    No. Because the P-value (2.277e-11) is less than assumed significance level (0.05), we can state that there is sufficient evidence to reject our null hypothesis. We can state that the slope of our linear model is not zero.
+Ans: No. Because the P-value (2.277e-11) is less than assumed significance level (0.05), we can state that there is sufficient evidence to reject our null hypothesis. We can state that the slope of our linear model is not zero.
     
 3.Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
     
-    No. Because the r-squared value is 0.7032, which means there is roughly 70% of all mpg predictions will be correct when using this multiple linear model.
+Ans: No. Because the r-squared value is 0.7032, which means there is roughly 70% of all mpg predictions will be correct when using this multiple linear model.
     However the intercept is also statistically significant, it means there are other variables and factors that contribute to the variation in mpg that have not been included in this linear regression model. Additonal dataset need to be collected or observed.
 ------------------------------------------------------------------------------------
-Process:
+Details Process:
 
 1. Shapiro-Wilk normality test for mpg 
-Output: 
-
-      W = 0.98536, p-value = 0.7869
+Output:  W = 0.98536, p-value = 0.7869
 
 Conclusion: 
- Because the P-value (0.7869) is greater than presumed significance level (0.05), we do not have sufficient evidence to reject the null hypothesis, which state that mpg is normally distributed.
+ The P-value (0.7869) is greater than presumed significance level (0.05), we do not have sufficient evidence to reject the null hypothesis, which state that mpg is normally distributed.
 
 2. Pearson Correlation Matrix:
-Purpose:
-        Identify how strongly or weakly two variables are related by using correlation coefficient (r).
-        
+Purpose:Identify how strongly or weakly two variables are related by using correlation coefficient (r).
+
 Output:
 
                          mpg vehicle.length vehicle.weight spoiler.angle ground.clearance
@@ -40,18 +37,16 @@ spoiler.angle    -0.02083999     0.02577114    -0.11307851    1.00000000      -0
 ground.clearance  0.32874886    -0.31663112     0.08511338   -0.21112057       1.00000000
 
 Conclusion: 
-  The above table shows the correlation coefficient (r) between each variable. 
-Vehicle.length and mpg are moderate positively correlated, ground.clearance and mpg are weak positively corelated, vehicle.weight roughly no correlated to mpg, and spoiler.angle has no or very weakly negatively correlated to mpg.
+As the output table shows the correlation coefficient (r) between each variable Vehicle.length and mpg is moderate positively correlated,
+ground.clearance and mpg are weak positively corelated, vehicle.weight roughly no correlated to mpg, and spoiler.angle 
+has no or very weakly negatively correlated to mpg.
 
 
 3. Multiple linear regression Model:
-Purpose:
-  Predict a continuous dependent variable based on more independent variables fitted to the equation of a line.
+Purpose:Predict a continuous dependent variable based on more independent variables fitted to the equation of a line.
 
 Output:
-  Call:
-  lm(formula = mpg ~ vehicle.length + vehicle.weight + spoiler.angle + 
-    ground.clearance, data = mechaCar_mpg)
+  Call:lm(formula = mpg ~ vehicle.length + vehicle.weight + spoiler.angle + ground.clearance, data = mechaCar_mpg)
 
   Residuals:
       Min       1Q   Median       3Q      Max 
@@ -82,13 +77,13 @@ Conclusion:
 
 Part 2 Suspension Coil Summary
 
-The summary statistics table:
+Statistical summary table:
 
   Mean_PSI | Median_PSI |  Variance_PSI | Stdev_PSI
   -----------------------------------------------
   1498.78	 |   1500	    |    62.29356	  |  7.892627
 
-The summary statistics group by three manufacturing Lot:
+The summary by three manufacturing Lot is as shown below:
 
 	
 Manufacturing_Lot | Mean_PSI | Median_PSI | Variance_PSI | Stdev_PSI
@@ -110,8 +105,7 @@ Conclusion:
 
 Part 3: Suspension Coil T-Test
 
-Output:
-    One Sample t-test
+Output:One Sample t-test
 
     data:  suspension_coil$PSI
       t = -1.8931, df = 149, p-value = 0.06028
@@ -123,19 +117,12 @@ Output:
       1498.78 
 
 Conclusion: 
-
-      Because the P-value (0.06) is greater than presumed significance level (0.05), we do not have sufficient evidence to reject the null hypothesis that there is no statistically different from the mean population results of 1,500 pounds-per-inch.
+ Because the P-value (0.06) is greater than presumed significance level (0.05), we do not have sufficient evidence to reject the null hypothesis that there is no statistically different from the mean population results of 1,500 pounds-per-inch.
 
 ----------------------------------------------------------------------------------------------------
 
 Part 4: Design Specific Study
-  
-  Background:
-  
-  There are many important metrics in an automotive industry that would affect customer's choice. For example the performance of auto: Miles per gallon (mpg), quarter mile second (qsec), hourepower (hp), etc. 
-  In addition, car price is one of the most important KPIs for customer. A car with lower price but same performance would be attractive to customer. 
-  Car's exterior also be an important metric. Different size and color would have different target market and customer.
-  
+ 
   Question:
   
   The proposed question is that Is there any relationship between car price and the total amount of sales.
