@@ -7,18 +7,7 @@ Applying statistics and hypothesis testing using R to analyze a series of datase
 Load, clean up, and reshape datasets using tidyverse and dplyr in R
 
 **Statistics test evaluated by R:**
-
-- Shapiro normality test
-- T-test
-- ANOVA
-- Linear Regression
-- Chi-Squared Test
-
-
 **Visualization by ggplot2**
-
-- Basic line, bar, and scatter plots
-- boxplots, density and heatmaps
 
 ### Results:
 
